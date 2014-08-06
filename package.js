@@ -17,9 +17,9 @@ Package.on_use(function (api) {
 
   api.export && api.export('Roles');
 
-  api.add_files('roles_server.js', 'server');
-  api.add_files('roles_common.js', both);
-  api.add_files('roles_client.js', 'client');
+  api.add_files('roles/roles_server.js', 'server');
+  api.add_files('roles/roles_common.js', both);
+  api.add_files('roles/roles_client.js', 'client');
 });
 
 Package.on_test(function (api) {
@@ -28,8 +28,8 @@ Package.on_test(function (api) {
   // include accounts-password so Meteor.users exists
   api.use(['roles','accounts-password','tinytest'], both);
 
-  api.add_files('tests/client.js', 'client');
-  api.add_files('tests/server.js', 'server');
+  api.add_files('roles/tests/client.js', 'client');
+  api.add_files('roles/tests/server.js', 'server');
 });
 
 // workaround for meter issue #1358
